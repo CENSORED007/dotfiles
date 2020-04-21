@@ -1,0 +1,25 @@
+{
+  "lists": {
+    "%2Fhome%2Frobinopletal": [
+      "ext",
+      "marke",
+      "mark",
+      "mar",
+      "market"
+    ]
+  },
+  "marketplace": {
+    "%2Fhome%2Frobinopletal": [
+      "markdwo",
+      "emmet",
+      "vim",
+      "ansible",
+      "python",
+      "react",
+      "es",
+      "sh",
+      "docker",
+      "git"
+    ]
+  }
+}

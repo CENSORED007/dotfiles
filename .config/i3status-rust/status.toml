@@ -1,0 +1,69 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%R %a %d/%m"
+
+[[block]]
+block = "weather"
+format = "{weather} ({location}) {temp}°"
+service = { name = "openweathermap", api_key = "b2f4791d71a5f50f022c80455547c942", city_id = "3067696", units = "metric" }
+interval = 120
+
+# [[block]]
+# block = "toggle"
+# text = "CDN77"
+# command_state = "~/.config/i3status-rust/vpn.sh status"
+# command_on = "~/.config/i3status-rust/vpn.sh toggle"
+# command_off = "~/.config/i3status-rust/vpn.sh toggle"
+# interval = 10
+
+[[block]]
+block = "toggle"
+text = "Surfshark"
+command_state = "~/.config/i3status-rust/vpn-surfshark.sh status"
+command_on = "~/.config/i3status-rust/vpn-surfshark.sh toggle"
+command_off = "~/.config/i3status-rust/vpn-surfshark.sh toggle"
+interval = 10
+
+[[block]]
+block = "cpu"
+interval = 3
+format = "{utilization}% {frequency}GHz"
+info = 50
+warning = 70
+critical = 90
+
+[[block]]
+block = "memory"
+format_mem = "{Mum}MB / ({Mup}%)"
+format_swap = "{SUm}MB / ({SUp}%)"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 10
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+# [[block]]
+# block = "temperature"
+# collapsed = true
+# interval = 10
+# format = "{min}° min, {max}° max, {average}° avg"
+# chip = "*-isa-*"
+
+
+[[block]]
+block = "sound"
+step_width = 1
+show_volume_when_muted = true
+
+[[block]]
+block = "music"
+player = "spotify"
+max_width = 20
+buttons = ["prev", "play", "next"]
