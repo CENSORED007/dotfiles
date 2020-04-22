@@ -61,11 +61,6 @@ window#waybar.chromium {
     background-color: #cc241d;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ebdbb2;
-}
-
 #clock {
     background-color: #b16286;
 }
@@ -181,4 +176,8 @@ label:focus {
     margin: 0 4px;
     color: #ebdbb2;
     background-color: #282828;
+}
+
+#mode {
+    background-color: #b16286;
 }

@@ -80,9 +80,9 @@ bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
 bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 
 # Pulse Audio controls (the number "3" here determines the correct JACK sink, $ pacmd list-sinks | grep -e 'name:' -e 'index:' )
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 3 +2% #increase sound volume 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 3 -2% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 3 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume jack_out +2% #increase sound volume 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume jack_out -2% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute jack_out toggle # mute sound
 
 set $j j
 set $h h
@@ -130,7 +130,6 @@ bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
 
 set $workspace1 "1:Chrome "
-# 
 set $workspace2 "2:Communication " 
 set $workspace3 "3:Terminals "
 set $workspace4 "4:Telegram "
@@ -170,12 +169,6 @@ bindsym $mod+Shift+c reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym $h resize shrink width 10 px or 10 ppt
         bindsym $j resize grow height 10 px or 10 ppt
         bindsym $k resize shrink height 10 px or 10 ppt
@@ -239,4 +232,5 @@ exec --no-startup-id redshift
 
 # Per app settings for floating
 for_window [app_id="org.gnome.Weather"] floating enable
-for_window [app_id="telegramdesktop"] floating enable
+for_window [app_id="qjackctl"] floating enable
+#for_window [app_id="telegramdesktop"] floating enable
