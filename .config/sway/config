@@ -127,7 +127,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split toggle
-bindsym $mod+BackSpace split toggle
+bindsym $mod+x split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen
