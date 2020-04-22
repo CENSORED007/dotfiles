@@ -47,9 +47,6 @@ exec mako
 # Clipman history
 bindsym $mod+v exec clipman pick --tool wofi -T'-i'
 
-# Start jack with pre-defined customization
-exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
-
 # Copy screenshot of an area to clipboard
 bindsym --release $mod+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy
 
@@ -229,6 +226,9 @@ bar {
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Redshift (apparently runs alone right now)
 exec --no-startup-id redshift
+
+# Start jack with pre-defined customization
+exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
 
 # Per app settings for floating
 for_window [app_id="org.gnome.Weather"] floating enable
