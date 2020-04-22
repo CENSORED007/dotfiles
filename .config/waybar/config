@@ -3,12 +3,12 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["battery", "clock", "cpu", "memory", "temperature", "pulseaudio", "custom/media"],
+    "modules-right": ["battery", "clock", "cpu", "memory", "temperature", "pulseaudio", "custom/media", "idle_inhibitor"],
     "sway/window": {
         "max-length": 50
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%H:%M | %a, %d. %b}"
     },
     "battery": {
         "format": "{capacity}% {icon}",
@@ -60,5 +60,12 @@
         "on-click": "playerctl --player=spotify play-pause",
         "on-click-right": "playerctl --player=spotify next",
         "on-click-middle": "playerctl --player=spotify previous"
+    },
+        "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     }
 }
