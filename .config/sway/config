@@ -7,6 +7,15 @@ set $alt Mod1
 # Font for window titles
 font pango: Fira Sans Book 8
 
+# Set terminal
+set $terminal /usr/bin/kitty
+
+# Wallpaper
+set $wallpaper ~/Documents/wallpapers/linux-robin.png
+
+# Menu used for launching apps
+set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
+
 # CZ keyboard layout, caps:escape switch, lalt lwin switch
 input type:keyboard {
     xkb_layout cz
@@ -22,7 +31,7 @@ input 1133:16514:Logitech_MX_Master_3 {
 
 # Setting background on my hdmi monitor
 output HDMI-A-1 {
-    bg ~/Documents/wallpapers/linux-robin.png stretch
+    bg $wallpaper stretch
     scale 1
 }
 
@@ -32,35 +41,35 @@ default_border pixel 2
 # Clipman
 exec wl-paste -t text --watch clipman store
 
+# Mako start
+exec mako
+
 # Clipman history
 bindsym $mod+v exec clipman pick --tool wofi -T'-i'
 
 # Start jack with pre-defined customization
 exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
 
+# Copy screenshot of an area to clipboard
 bindsym --release $mod+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy
+
+# Copy screenshot of an area to ~/Pictures/screenshots/
 bindsym --release $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%s).png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Ranger
-bindsym $mod+f exec /usr/bin/kitty -e ranger
-
 # start a terminal
-bindsym $mod+Return exec /usr/bin/kitty
+bindsym $mod+Return exec $terminal
+
+# Launch ranger
+bindsym $mod+f exec $terminal -e ranger
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Wofi
-set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
-
 # start a program launcher
-bindsym $mod+d exec --no-startup-id $menu
-
-# Mako start
-exec mako
+bindsym $mod+d exec $menu
 
 # makoctl 
 bindsym Control+Shift+period exec --no-startup-id makoctl restore
@@ -127,34 +136,10 @@ set $workspace3 "3:Terminals "
 set $workspace4 "4:Telegram "
 set $workspace5 "5:MyChrome "
 set $workspace6 "6:Virtualbox "
-set $workspace8 "8:OBS "
-set $workspace9 "9:Audio "
+set $workspace7 "7:Free desktop"
+set $workspace8 "8:Free desktop"
+set $workspace9 "9:OBS "
 set $workspace10 "10:Spotify "
-
-#    # switch to workspace
-#    bindsym $mod+1 workspace $workspace1
-#    bindsym $mod+2 workspace $workspace2
-#    bindsym $mod+3 workspace $workspace3
-#    bindsym $mod+4 workspace $workspace4
-#    bindsym $mod+5 workspace $workspace5
-#    bindsym $mod+6 workspace $workspace6
-#    bindsym $mod+7 workspace 7
-#    bindsym $mod+8 workspace $workspace8
-#    bindsym $mod+9 workspace $workspace9
-#    bindsym $mod+0 workspace $workspace10
-#    
-#    # move focused container to workspace
-#    bindsym $mod+Shift+1 move container to workspace $workspace1
-#    bindsym $mod+Shift+2 move container to workspace $workspace2
-#    bindsym $mod+Shift+3 move container to workspace $workspace3
-#    bindsym $mod+Shift+4 move container to workspace $workspace4
-#    bindsym $mod+Shift+5 move container to workspace $workspace5
-#    bindsym $mod+Shift+6 move container to workspace $workspace6
-#    bindsym $mod+Shift+7 move container to workspace 7
-#    bindsym $mod+Shift+8 move container to workspace $workspace8
-#    bindsym $mod+Shift+9 move container to workspace $workspace9
-#    bindsym $mod+Shift+0 move container to workspace $workspace10
-
 
 # switch to workspace
 bindsym $mod+plus workspace $workspace1
@@ -163,7 +148,7 @@ bindsym $mod+scaron workspace $workspace3
 bindsym $mod+ccaron workspace $workspace4
 bindsym $mod+rcaron workspace $workspace5
 bindsym $mod+zcaron workspace $workspace6
-bindsym $mod+yacute workspace 7
+bindsym $mod+yacute workspace $workspace7
 bindsym $mod+aacute workspace $workspace8
 bindsym $mod+iacute workspace $workspace9
 bindsym $mod+eacute workspace $workspace10
@@ -175,16 +160,13 @@ bindsym $mod+Shift+scaron move container to workspace $workspace3
 bindsym $mod+Shift+ccaron move container to workspace $workspace4
 bindsym $mod+Shift+rcaron move container to workspace $workspace5
 bindsym $mod+Shift+zcaron move container to workspace $workspace6
-bindsym $mod+Shift+yacute move container to workspace 7
+bindsym $mod+Shift+yacute move container to workspace $workspace7
 bindsym $mod+Shift+aacute move container to workspace $workspace8
 bindsym $mod+Shift+iacute move container to workspace $workspace9
 bindsym $mod+Shift+eacute move container to workspace $workspace10
 
-# reload the configuration file
+# reload the configuration
 bindsym $mod+Shift+c reload
-
-# exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -210,35 +192,31 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# Resize windows mode
 bindsym $mod+r mode "resize"
 
 # Focus on mouse hover (yes/no)
 focus_follows_mouse yes
 
-# swaylock
-bindsym $mod+Shift+x exec --no-startup-id swaylock -f -i ~/Documents/wallpapers/linux-robin.png
+# Swaylock
+bindsym $mod+Shift+x exec --no-startup-id swaylock -f -i $wallpaper
 
-#swaylock + suspend
-bindsym $mod+Shift+Control+x exec --no-startup-id swaylock -f -i ~/Documents/wallpapers/linux-robin.png && systemctl suspend
+# Swaylock + suspend
+bindsym $mod+Shift+Control+x exec --no-startup-id swaylock -f -i $wallpaper && systemctl suspend
 
+# Swayidle
 exec swayidle -w \
-    timeout 300 swaylock -f -i ~/Documents/wallpapers/linux-robin.png \
+    timeout 300 swaylock -f -i $wallpaper \
     timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-    before-sleep swaylock -f -i ~/Documents/wallpapers/linux-robin.png
+    before-sleep swaylock -f -i $wallpaper \
 
-# Google-Chrome
+# Google-Chrome launch
 bindsym $mod+b exec google-chrome-stable
 
 ## Bar configuration
 
 bar {
-        # Sets i3status-rust as the status bar 
-        # status_command /usr/bin/i3status-rs ~/.config/i3status-rust/status.toml
-
-        # Tray Output control (run xrandr to find out monitor)
-        #tray_output none
-
         # Says padding, but basically icon size
         tray_padding 4
         
@@ -259,8 +237,6 @@ exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 # Redshift (apparently runs alone right now)
 exec --no-startup-id redshift
 
+# Per app settings for floating
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="telegramdesktop"] floating enable
-
-# vim intellisense for i3, managed by Plug 'PotatoesMaster/i3-vim-syntax'
-# vim:filetype=i3

@@ -46,6 +46,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'junegunn/fzf.vim'
     " Gruvbox theme
         Plug 'morhetz/gruvbox'
+    " Sway syntax
+        Plug 'terminalnode/sway-vim-syntax'
 
 " Vim Plugs end here'
 
