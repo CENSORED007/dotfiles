@@ -128,9 +128,14 @@ alias ssh='kitty +kitten ssh'
 alias d="kitty +kitten diff"
 alias image="kitty +kitten icat"
 alias code="~/Documents/Programming"
-alias swayedit="nvim ~/.config/sway/config"
 alias h="history -20"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Sway specifics
+alias swayedit="nvim ~/.config/sway/config"
+alias baredit="ranger ~/.config/waybar/"
+alias makoedit="nvim ~/.config/mako/config"
+alias screenshots="ranger ~/Pictures/screenshots/"
 
 # Virt-viewer
 alias viewsystem='sudo virt-viewer --connect qemu:///system'
