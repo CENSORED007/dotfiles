@@ -130,10 +130,6 @@ label:focus {
     min-width: 100px;
 }
 
-#custom-media.custom-spotify {
-    background-color: #b16286;
-}
-
 #custom-media.custom-vlc {
     background-color: #ffa000;
 }
@@ -179,5 +175,9 @@ label:focus {
 }
 
 #mode {
+    background-color: #b16286;
+}
+
+#custom-media {
     background-color: #b16286;
 }

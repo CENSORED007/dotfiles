@@ -16,6 +16,21 @@ set $wallpaper ~/Documents/wallpapers/linux-robin.png
 # Menu used for launching apps
 set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
 
+# Swalock
+set $swaylock swaylock \
+        --screenshots \
+        --clock \
+        --indicator \
+        --indicator-radius 150 \
+        --indicator-thickness 7 \
+        --effect-blur 7x5 \
+        --effect-vignette 0.5:0.5 \
+        --ring-color B16286 \
+        --key-hl-color EBDBB2 \
+        --line-color 282828 \
+        --inside-color 282828 \
+        --separator-color 00000000 \
+
 # CZ keyboard layout, caps:escape switch, lalt lwin switch
 input type:keyboard {
     xkb_layout cz
@@ -126,16 +141,38 @@ bindsym $mod+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
 
-set $workspace1 "1:Chrome "
-set $workspace2 "2:Communication " 
-set $workspace3 "3:Terminals "
-set $workspace4 "4:Telegram "
-set $workspace5 "5:MyChrome "
-set $workspace6 "6:Virtualbox "
-set $workspace7 "7:Free desktop"
-set $workspace8 "8:Free desktop"
-set $workspace9 "9:OBS "
-set $workspace10 "10:Spotify "
+# set $workspace1 "1:Chrome "
+# set $workspace2 "2:Communication " 
+# set $workspace3 "3:Terminals "
+# set $workspace4 "4:Telegram "
+# set $workspace5 "5:MyChrome "
+# set $workspace6 "6:Virtualbox "
+# set $workspace7 "7:Free desktop"
+# set $workspace8 "8:Free desktop"
+# set $workspace9 "9:OBS "
+# set $workspace10 "10:Spotify "
+
+set $workspace1 "1"
+set $workspace2 "2" 
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+set $workspace11 "11"
+set $workspace12 "12"
+set $workspace13 "13"
+set $workspace14 "14"
+set $workspace15 "15"
+set $workspace16 "16"
+set $workspace17 "17"
+set $workspace18 "18"
+set $workspace19 "19"
+set $workspace20 "20"
+
 
 # switch to workspace
 bindsym $mod+plus workspace $workspace1
@@ -149,6 +186,17 @@ bindsym $mod+aacute workspace $workspace8
 bindsym $mod+iacute workspace $workspace9
 bindsym $mod+eacute workspace $workspace10
 
+bindsym $mod+Control+plus workspace $workspace11
+bindsym $mod+Control+ecaron workspace $workspace12
+bindsym $mod+Control+scaron workspace $workspace13
+bindsym $mod+Control+ccaron workspace $workspace14
+bindsym $mod+Control+rcaron workspace $workspace15
+bindsym $mod+Control+zcaron workspace $workspace16
+bindsym $mod+Control+yacute workspace $workspace17
+bindsym $mod+Control+aacute workspace $workspace18
+bindsym $mod+Control+iacute workspace $workspace19
+bindsym $mod+Control+eacute workspace $workspace20
+
 # move focused container to workspace
 bindsym $mod+Shift+plus move container to workspace $workspace1
 bindsym $mod+Shift+ecaron move container to workspace $workspace2
@@ -160,6 +208,17 @@ bindsym $mod+Shift+yacute move container to workspace $workspace7
 bindsym $mod+Shift+aacute move container to workspace $workspace8
 bindsym $mod+Shift+iacute move container to workspace $workspace9
 bindsym $mod+Shift+eacute move container to workspace $workspace10
+
+bindsym $mod+Control+Shift+plus move container to workspace $workspace11
+bindsym $mod+Control+Shift+ecaron move container to workspace $workspace12
+bindsym $mod+Control+Shift+scaron move container to workspace $workspace13
+bindsym $mod+Control+Shift+ccaron move container to workspace $workspace14
+bindsym $mod+Control+Shift+rcaron move container to workspace $workspace15
+bindsym $mod+Control+Shift+zcaron move container to workspace $workspace16
+bindsym $mod+Control+Shift+yacute move container to workspace $workspace17
+bindsym $mod+Control+Shift+aacute move container to workspace $workspace18
+bindsym $mod+Control+Shift+iacute move container to workspace $workspace19
+bindsym $mod+Control+Shift+eacute move container to workspace $workspace20
 
 # reload the configuration
 bindsym $mod+Shift+c reload
@@ -189,20 +248,23 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse yes
 
 # Swaylock
-bindsym $mod+Shift+x exec --no-startup-id swaylock -f -i $wallpaper
+bindsym $mod+Shift+x exec --no-startup-id $swaylock -f -i $wallpaper
 
 # Swaylock + suspend
-bindsym $mod+Shift+Control+x exec --no-startup-id swaylock -f -i $wallpaper && systemctl suspend
+bindsym $mod+Shift+Control+x exec --no-startup-id $swaylock -f -i $wallpaper && systemctl suspend
 
 # Swayidle
 exec swayidle -w \
-    timeout 300 swaylock -f -i $wallpaper \
+    timeout 300 $swaylock -f -i $wallpaper \
     timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-    before-sleep swaylock -f -i $wallpaper \
+    before-sleep $swaylock -f -i $wallpaper \
 
 # Google-Chrome launch
 bindsym $mod+b exec google-chrome-stable
+
+# Testing Chromium Ozone
+#bindsym $mod+b exec chromium
 
 ## Bar configuration
 
