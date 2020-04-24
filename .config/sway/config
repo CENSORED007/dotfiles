@@ -31,6 +31,8 @@ set $swaylock swaylock \
         --inside-color 282828 \
         --separator-color 00000000 \
 
+set $mxmaster3 1133:16514:Logitech_MX_Master_3
+
 # CZ keyboard layout, caps:escape switch, lalt lwin switch
 input type:keyboard {
     xkb_layout cz
@@ -40,9 +42,11 @@ input type:keyboard {
 }
 
 # Logitech MX Master 3 scroll factor
-input 1133:16514:Logitech_MX_Master_3 {
+input $mxmaster3 {
     scroll_factor 1.5
 }
+
+seat * hide_cursor 8000
 
 # Setting background on my hdmi monitor
 output HDMI-A-1 {
@@ -63,10 +67,10 @@ exec mako
 bindsym $mod+v exec clipman pick --tool wofi -T'-i'
 
 # Copy screenshot of an area to clipboard
-bindsym --release $mod+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy
+bindsym --release $mod+s exec grim -g "$(slurp)" - | wl-copy
 
 # Copy screenshot of an area to ~/Pictures/screenshots/
-bindsym --release $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%s).png
+bindsym --release $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%s).png
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -84,17 +88,19 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # makoctl 
-bindsym Control+Shift+period exec --no-startup-id makoctl restore
+bindsym Control+Shift+period exec makoctl restore
+
+bindsym Control+Shift+comma exec makoctl dismiss
 
 # Media player controls (visit https://github.com/altdesktop/playerctl for options)
-bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
-bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 # Pulse Audio controls (the number "3" here determines the correct JACK sink, $ pacmd list-sinks | grep -e 'name:' -e 'index:' )
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume jack_out +2% #increase sound volume 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume jack_out -2% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute jack_out toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume jack_out +2% #increase sound volume 
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume jack_out -2% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute jack_out toggle # mute sound
 
 set $j j
 set $h h
@@ -248,17 +254,17 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse yes
 
 # Swaylock
-bindsym $mod+Shift+x exec --no-startup-id $swaylock -f -i $wallpaper
+bindsym $mod+Shift+x exec $swaylock -f -i $wallpaper
 
 # Swaylock + suspend
-bindsym $mod+Shift+Control+x exec --no-startup-id $swaylock -f -i $wallpaper && systemctl suspend
+bindsym $mod+Shift+Control+x exec $swaylock -f -i $wallpaper && systemctl suspend
 
 # Swayidle
 exec swayidle -w \
-    timeout 300 $swaylock -f -i $wallpaper \
+    timeout 300 '$swaylock' \
     timeout 600 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-    before-sleep $swaylock -f -i $wallpaper \
+    before-sleep '$swaylock' \
 
 # Google-Chrome launch
 bindsym $mod+b exec google-chrome-stable
@@ -285,9 +291,9 @@ bar {
 #### Autostart Apps (Edit depending on the computer setup)
 
 # GeoClue2 for the Redshift daemon
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec /usr/lib/geoclue-2.0/demos/agent
 # Redshift (apparently runs alone right now)
-exec --no-startup-id redshift
+exec redshift
 
 # Start jack with pre-defined customization
 exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
