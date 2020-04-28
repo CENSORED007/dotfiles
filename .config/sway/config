@@ -88,9 +88,13 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # makoctl 
-bindsym Control+Shift+period exec makoctl restore
+bindsym $mod+period exec makoctl restore
 
-bindsym Control+Shift+comma exec makoctl dismiss
+bindsym $mod+comma exec makoctl dismiss
+
+bindsym $mod+m exec makoctl set invisible=1
+
+bindsym $mod+n exec makoctl set invisible=0
 
 # Media player controls (visit https://github.com/altdesktop/playerctl for options)
 bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
