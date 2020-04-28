@@ -3,9 +3,9 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["clock", "cpu", "memory", "network","pulseaudio", "custom/media", "idle_inhibitor", "battery"],
+    "modules-right": ["clock", "cpu", "memory", "network", "custom/vpn", "pulseaudio", "custom/media", "idle_inhibitor", "battery"],
     "sway/window": {
-        "max-length": 50
+        "max-length": 40
     },
     "clock": {
         "format": "{:%H:%M  |  %a, %d. %b}"
@@ -31,17 +31,24 @@
 	"format": "{temperatureC}°C "
     },
     "network": {
-    "interface": "enp2s0",
     "format": "{ifname}",
-    "interval": 20,
     "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ifname} ",
+    "format-ethernet": "",
     "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
+    },
+    "custom/vpn": {
+      "interval": 5,
+      "tooltip": false,
+      "format": "{}",
+      "return-type": "json",
+      "exec": "~/.dotfiles/dotfiles/.config/waybar/custom_modules/wbm_vpn tun0",
+      "on-click": "nmcli con up id Surfshark",
+      "on-click-right": "nmcli con down id Surfshark"
     },
     "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -57,7 +64,7 @@
         "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pactl set-sink-mute 3 toggle"
+    "on-click": "pactl set-sink-mute jack_out toggle"
     },
         "custom/media": {
         "format": "{icon} {}",

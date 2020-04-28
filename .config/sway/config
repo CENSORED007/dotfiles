@@ -11,7 +11,7 @@ font pango: Fira Sans Book 8
 set $terminal /usr/bin/kitty
 
 # Wallpaper
-set $wallpaper ~/Documents/wallpapers/linux-robin.png
+set $wallpaper ~/Documents/wallpapers/robinwall02-notext.png
 
 # Menu used for launching apps
 set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
@@ -79,7 +79,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 
 # Launch ranger
-bindsym $mod+f exec $terminal -e ranger
+bindsym $mod+f exec nautilus -w
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -250,6 +250,9 @@ mode "resize" {
 # Resize windows mode
 bindsym $mod+r mode "resize"
 
+# Start jack with pre-defined customization
+exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
+
 # Focus on mouse hover (yes/no)
 focus_follows_mouse yes
 
@@ -262,8 +265,8 @@ bindsym $mod+Shift+Control+x exec $swaylock -f -i $wallpaper && systemctl suspen
 # Swayidle
 exec swayidle -w \
     timeout 300 '$swaylock' \
-    timeout 600 'swaymsg "output * dpms off"' \
-        resume 'swaymsg "output * dpms on"' \
+    timeout 600 ' swaymsg "output * dpms off" ' \
+        resume ' swaymsg "output * dpms on" ' \
     before-sleep '$swaylock' \
 
 # Google-Chrome launch
@@ -294,9 +297,6 @@ bar {
 exec /usr/lib/geoclue-2.0/demos/agent
 # Redshift (apparently runs alone right now)
 exec redshift
-
-# Start jack with pre-defined customization
-exec ~/Documents/Programming/Personal/AudioSetup/startjack.sh
 
 # Per app settings for floating
 for_window [app_id="org.gnome.Weather"] floating enable
