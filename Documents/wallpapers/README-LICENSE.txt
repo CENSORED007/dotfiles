@@ -3,6 +3,5 @@ Some of the artworks present in this repository belong to Alexandra Chloe Winkel
 These files are namely:
 
 robinwall02-notext.png
-robinwall02-text.png
 
 Please visit https://creativecommons.org/licenses/by-nc-nd/3.0/ to learn more.
