@@ -9,7 +9,8 @@
 ```
 sway, wl-clipboard, clipman, wofi, mako, waybar, kitty, swaylock-effects, grim, slurp,
 nautilus, playerctl, pactl, swayidle, google-chrome, redshift (with wayland patch)
-geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, blueberry
+geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, blueberry,
+lxappearance
 ```
 
 ### Fonts
@@ -17,6 +18,14 @@ geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, bluebe
 ```
 Roboto Slab, otf-font-awesome, Fira Sans, Fira Mono, ttf-font-awesome-4,
 ttf-font-awesome, ttf-symbola, ttf-dejavu
+```
+
+### GTK Themes
+
+```
+pop-gtk-theme, pop-icon-theme
+
+Optional: pop-gnome-shell-theme (if you would also like to use GNOME Pop theme)
 ```
 
 ### Command-Line utilities
