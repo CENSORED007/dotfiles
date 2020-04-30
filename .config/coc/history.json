@@ -20,6 +20,13 @@
       "sh",
       "docker",
       "git"
-    ]
+    ],
+    "%2Fhome%2Frobinopletal%2F": {
+      "dotfiles%2Fdotfiles%2F": {
+        "config%2Fwaybar": [
+          "json"
+        ]
+      }
+    }
   }
 }

@@ -46,7 +46,7 @@ input $mxmaster3 {
     scroll_factor 1.5
 }
 
-seat * hide_cursor 8000
+seat * hide_cursor 8000 \
 
 # Setting background on my hdmi monitor
 output HDMI-A-1 {
@@ -183,7 +183,6 @@ set $workspace18 "18"
 set $workspace19 "19"
 set $workspace20 "20"
 
-
 # switch to workspace
 bindsym $mod+plus workspace $workspace1
 bindsym $mod+ecaron workspace $workspace2
@@ -306,3 +305,7 @@ exec redshift
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="qjackctl"] floating enable
 #for_window [app_id="telegramdesktop"] floating enable
+
+# Assign apps to particular workspaces
+assign [app_id="telegramdesktop"] workspace $workspace4
+assign [class="Spotify"] workspace $workspace4
