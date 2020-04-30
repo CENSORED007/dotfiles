@@ -9,7 +9,7 @@
 ```
 sway, wl-clipboard, clipman, wofi, mako, waybar, kitty, swaylock-effects, grim, slurp,
 nautilus, playerctl, pactl, swayidle, google-chrome, redshift (with wayland patch)
-geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim
+geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, blueberry
 ```
 
 ### Fonts
@@ -56,7 +56,7 @@ cd dotfiles
 ./restoreconfig.sh
 ```
 
-## Spice up spotify
+## Spice up Spotify
 
 Run `spicetify apply` in the ~/.config/spicetify/ directory
 
