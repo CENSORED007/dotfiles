@@ -309,4 +309,5 @@ for_window [app_id="blueberry.py"] floating enable
 
 # Assign apps to particular workspaces
 assign [app_id="telegramdesktop"] workspace $workspace4
-assign [class="Spotify"] workspace $workspace4
+assign [app_id="pavucontrol"] workspace $workspace10
+assign [class="Spotify"] workspace $workspace10
