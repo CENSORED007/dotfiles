@@ -51,6 +51,7 @@ seat * hide_cursor 8000 \
 # Setting background on my hdmi monitor
 output HDMI-A-1 {
     bg $wallpaper stretch
+    mode 2560x1080@75Hz
     scale 1
 }
 
