@@ -41,6 +41,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "kitty -e nmtui-connect"
+        // change the above to wifi script
     },
     "custom/vpn": {
       "interval": 5,
