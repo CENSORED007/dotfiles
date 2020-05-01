@@ -16,6 +16,8 @@ set $wallpaper ~/Documents/wallpapers/robinwall02-notext.png
 # Menu used for launching apps
 set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
 
+set $HDMIresolutionrefresh 2560x1080@74.990997Hz
+
 # Swalock
 set $swaylock swaylock \
         --screenshots \
@@ -52,6 +54,7 @@ seat * hide_cursor 8000 \
 output HDMI-A-1 {
     bg $wallpaper stretch
     scale 1
+    mode $HDMIresolutionrefresh
 }
 
 # Setting default border for windows
