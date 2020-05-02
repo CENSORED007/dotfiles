@@ -10,7 +10,7 @@
 window#waybar {
     background-color: #282828;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #ebdbb2;
+    color: #A89984;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -40,20 +40,20 @@ window#waybar.chromium {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ebdbb2;
+    color: #A89984;
     border-bottom: 3px solid transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
     box-shadow: inherit;
     border-bottom: 3px solid #ebdbb2;
 }
 
 #workspaces button.focused {
+    color: #ebdbb2;
     background-color: #458588;
-    border-bottom: 3px solid #d5c4a1;
+    border-bottom: 3px solid #ebdbb2;
 }
 
 #workspaces button.urgent {
@@ -115,22 +115,8 @@ label:focus {
     background-color: #cc241d;
 }
 
-#pulseaudio {
-    background-color: #d79921;
-}
-
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
-}
-
-#custom-media {
-    background-color: #66cc99;
-    min-width: 100px;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+    border-bottom: 3px solid #CC241D;
 }
 
 #temperature {
@@ -141,17 +127,8 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    color: #ebdbb2;
 }
 
 #clock,
@@ -166,17 +143,29 @@ label:focus {
 #tray,
 #mode,
 #idle_inhibitor,
+#custom-vpn,
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
-    color: #ebdbb2;
-    background-color: #282828;
+    color: #A89984;
+    background-color: inherit;
+}
+
+#custom-vpn {
+    border-bottom: 3px solid #98971A;
+}
+
+#custom-vpn.down {
+    border-bottom: none;
 }
 
 #mode {
     background-color: #b16286;
 }
 
+/*
 #custom-media {
     background-color: #b16286;
+    color: #ebdbb2;
 }
+*/
