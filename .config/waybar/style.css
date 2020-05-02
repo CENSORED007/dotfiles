@@ -149,6 +149,7 @@ label:focus {
     margin: 0 4px;
     color: #A89984;
     background-color: inherit;
+    border-bottom: 3px solid transparent;
 }
 
 #custom-vpn {
@@ -163,9 +164,6 @@ label:focus {
     background-color: #b16286;
 }
 
-/*
 #custom-media {
-    background-color: #b16286;
-    color: #ebdbb2;
+    border-bottom: 3px solid #b16286;
 }
-*/
