@@ -46,6 +46,7 @@ alias swayedit="nvim ~/.config/sway/config"
 alias baredit="ranger ~/.config/waybar/"
 alias makoedit="nvim ~/.config/mako/config"
 alias screenshots="ranger ~/Pictures/screenshots/"
+alias dots="cd ~/.dotfiles/dotfiles/"
 
 # Virt-viewer
 alias viewsystem='sudo virt-viewer --connect qemu:///system'
