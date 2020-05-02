@@ -34,8 +34,6 @@ call plug#begin('~/.vim/plugged')
         Plug 'tpope/vim-surround'
     "repeat with . for vim-surround
         Plug 'tpope/vim-repeat'
-    "Gruvbox Color Theme
-"        Plug 'morhetz/gruvbox'
     "NerdTree
         Plug 'preservim/nerdtree'
     "coc.vim

@@ -19,7 +19,7 @@ set $menu dmenu_path | wofi --show drun -i | xargs swaymsg exec -
 set $HDMIresolutionrefresh 2560x1080@74.990997Hz
 
 # My home ultrawide (LG 29WK500)
-set $HDMIultrawide Goldstar Company Ltd LG ULTRAWIDE 0x0000B04B
+set $HDMIultrawide 'Goldstar Company Ltd LG ULTRAWIDE 0x0000B04B'
 
 # Swalock
 set $swaylock swaylock \
