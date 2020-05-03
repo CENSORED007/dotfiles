@@ -311,6 +311,9 @@ exec redshift
 for_window [app_id="org.gnome.Weather"] floating enable
 for_window [app_id="qjackctl"] floating enable
 for_window [app_id="blueberry.py"] floating enable
+for_window [app_id="gnome-contacts"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [app_id="mpv"] floating enable
 #for_window [app_id="telegramdesktop"] floating enable
 
 # Assign apps to particular workspaces

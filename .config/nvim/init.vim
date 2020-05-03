@@ -182,6 +182,8 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
+nnoremap <C-l> <C-i>
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

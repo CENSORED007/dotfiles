@@ -145,7 +145,6 @@ label:focus {
     margin: 0 4px;
     color: #A89984;
     background-color: inherit;
-    border-bottom: 3px solid transparent;
 }
 
 #idle_inhibitor.activated {
