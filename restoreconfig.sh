@@ -17,4 +17,10 @@ printf '===================================\n\n'
 ln -s ~/.dotfiles/dotfiles/.zshrc ~/
 printf '\n'
 
+printf 'Export nvim as default editor\n'
+printf '===================================\n\n'
+
+export EDITOR="nvim"
+printf '\n'
+
 printf 'ALL FINISHED!\n'
