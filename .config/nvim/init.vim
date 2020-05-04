@@ -1,6 +1,3 @@
-" THIS FILE IS DEPRECATED IN FAVOUR OF THE NVIM CONFIGURATION
-" 
-
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -46,6 +43,10 @@ call plug#begin('~/.vim/plugged')
         Plug 'morhetz/gruvbox'
     " Sway syntax
         Plug 'terminalnode/sway-vim-syntax'
+    " Git stuff
+        Plug 'tpope/vim-fugitive'
+    " Commentary plugin
+        Plug 'tpope/vim-commentary'
 
 " Vim Plugs end here'
 
@@ -67,7 +68,7 @@ call plug#end()
     " Choose between buffers when hitting leader + b
         nnoremap <leader>b :buffers<CR>:buffer<Space>
     " Edit .vimrc in vertical split pane pressing <leader>ev
-        nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
+        nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.dotfiles/dotfiles/.config/nvim/init.vim<cr>
     " Make new verical split and switch over to it
         nnoremap <leader>w <C-w>v<C-w>l
     " Nerd tree mapping (CTRL + N = Toggle NerdTree)

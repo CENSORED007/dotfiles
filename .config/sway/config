@@ -98,7 +98,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 
 # Launch ranger
-bindsym $mod+f exec nautilus -w
+bindsym $mod+f exec kitty -e ranger -r ~/
 
 # kill focused window
 bindsym $mod+Shift+q kill

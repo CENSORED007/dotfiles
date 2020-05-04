@@ -49,6 +49,10 @@ alias makoedit="nvim ~/.config/mako/config"
 alias screenshots="ranger ~/Pictures/screenshots/"
 alias dots="cd ~/.dotfiles/dotfiles/"
 
+# Navigating the FS
+alias exthdd="cd /run/media/robinopletal/cea2d37b-4ec8-4161-91e3-785ae362e0ab/"
+alias inthdd="cd /run/media/robinopletal/internalHDD1"
+
 # Virt-viewer
 alias viewsystem='sudo virt-viewer --connect qemu:///system'
 
