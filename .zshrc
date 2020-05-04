@@ -40,7 +40,6 @@ alias d="kitty +kitten diff"
 alias image="kitty +kitten icat"
 alias code="~/Documents/Programming"
 alias h="history -20"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='exa'
 alias mpvplaylist='mpv * "$@" &> /dev/null & disown'
 
