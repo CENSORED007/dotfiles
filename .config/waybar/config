@@ -1,9 +1,27 @@
 {
     "layer": "top",
     "height": 25,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+
+    "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+    ],
+
     "modules-center": ["sway/window"],
-    "modules-right": ["clock", "cpu", "memory", "network", "custom/vpn", "pulseaudio", "custom/media", "idle_inhibitor", "battery"],
+
+    "modules-right": [
+    "clock", 
+    "cpu", 
+    "memory", 
+    "network", 
+    "custom/vpn", 
+    "custom/dnd", 
+    "pulseaudio", 
+    "custom/media", 
+    "idle_inhibitor", 
+    "battery"
+    ],
+
     "sway/window": {
         "max-length": 40
     },
@@ -42,6 +60,13 @@
     "max-length": 50,
     "on-click": "kitty -e nmtui-connect"
         // change the above to wifi script
+    },
+    "custom/dnd": {
+        "exec": "sh ~/.dotfiles/dotfiles/.config/waybar/scripts/waybar-dnd",
+        "return-type": "json",
+        "signal": 2,
+        "interval": "once",
+        "on-click": "sh ~/.dotfiles/dotfiles/.config/waybar/scripts/waybar-dnd toggle"
     },
     "custom/vpn": {
       "interval": 5,
