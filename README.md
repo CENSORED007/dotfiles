@@ -1,6 +1,6 @@
 # My dots
 
-![Alt text](Pictures/cool_screenshots/1588591238.png?raw=true "The Desktop")
+![Alt text](Pictures/cool_screenshots/1588591415.png?raw=true "The Desktop")
 
 ## Installation requirements
 
