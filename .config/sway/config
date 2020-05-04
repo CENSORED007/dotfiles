@@ -327,7 +327,10 @@ for_window [app_id="blueberry.py"] floating enable
 for_window [app_id="gnome-contacts"] floating enable
 for_window [app_id="org.gnome.clocks"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Google-chrome"] floating enable
 for_window [app_id="mpv"] floating enable
+for_window [app_id="mpv"] inhibit_idle fullscreen
+
 #for_window [app_id="telegramdesktop"] floating enable
 
 # Assign apps to particular workspaces
