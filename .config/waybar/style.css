@@ -10,7 +10,8 @@
 window#waybar {
     background-color: #282828;
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #A89984;
+    /* color: #A89984; */
+    color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -37,22 +38,28 @@ window#waybar.chromium {
     border: none;
 }
 
+#custom-dnd.on {
+    border-bottom: 3px solid #CC241D;
+}
+
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #A89984;
+    color: #ebdbb2;
+    /* color: #A89984; */
     border-bottom: 3px solid transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     box-shadow: inherit;
+    background-color: #665C54;
     border-bottom: 3px solid #ebdbb2;
 }
 
 #workspaces button.focused {
     color: #ebdbb2;
-    background-color: #458588;
+    background-color: #665C54;
     border-bottom: 3px solid #ebdbb2;
 }
 
@@ -143,7 +150,8 @@ label:focus {
 #mpd {
     padding: 0 10px;
     margin: 0 4px;
-    color: #A89984;
+    color: #ebdbb2;
+    /* color: #A89984; */
     background-color: inherit;
 }
 
