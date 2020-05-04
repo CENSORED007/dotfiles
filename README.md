@@ -71,3 +71,7 @@ Run `spicetify apply` in the ~/.config/spicetify/ directory
 
 If it fails, follow the [installation guide](https://github.com/khanhas/spicetify-cli/wiki/Installation)
 (installation steps vary depending on where from Spotify is)
+
+## Questions
+
+If you have questions, don't hesitate to reach out to me by creating an issue :)
