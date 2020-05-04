@@ -33,6 +33,7 @@ alias testping="ping archlinux.org"
 # Configure vim = nvim + v = nvim 
 alias vim="nvim"
 alias v="nvim"
+alias r="ranger"
 # Kitty aliases
 alias ssh='kitty +kitten ssh'
 alias d="kitty +kitten diff"
