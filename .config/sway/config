@@ -281,6 +281,9 @@ focus_follows_mouse yes
 # Swaylock
 bindsym $mod+Shift+x exec $swaylock -f -i $wallpaper
 
+# Power menu
+bindsym $mod+Shift+e exec ~/.dotfiles/dotfiles/.config/sway/scripts/powermenu-wofi.sh
+
 # Swaylock + suspend
 bindsym $mod+Shift+Control+x exec $swaylock -f -i $wallpaper && systemctl suspend
 
