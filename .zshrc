@@ -40,6 +40,7 @@ alias image="kitty +kitten icat"
 alias code="~/Documents/Programming"
 alias h="history -20"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls='exa'
 
 # Sway specifics
 alias swayedit="nvim ~/.config/sway/config"

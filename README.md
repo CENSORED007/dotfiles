@@ -1,6 +1,6 @@
 # My dots
 
-![Alt text](Pictures/cool_screenshots/1588457427.png?raw=true "The Desktop")
+![Alt text](Pictures/cool_screenshots/1588591238.png?raw=true "The Desktop")
 
 ## Installation requirements
 
@@ -10,7 +10,7 @@
 sway, wl-clipboard, clipman, wofi, mako, waybar, kitty, swaylock-effects, grim, slurp,
 nautilus, playerctl, pactl, swayidle, google-chrome, redshift (with wayland patch)
 geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, blueberry,
-lxappearance
+lxappearance, exa
 ```
 
 ### Fonts
