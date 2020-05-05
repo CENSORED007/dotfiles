@@ -6,7 +6,14 @@
       "mark",
       "mar",
       "market"
-    ]
+    ],
+    "%2Fhome%2Frobinopletal%2F": {
+      "dotfiles%2Fdotfiles%2F": {
+        "config%2Fcoc%2Fextensions%2Fnode_modules%2Fcoc-git": [
+          "commit"
+        ]
+      }
+    }
   },
   "marketplace": {
     "%2Fhome%2Frobinopletal": [
@@ -35,5 +42,15 @@
       "git",
       "gitig"
     ]
+  },
+  "commits": {
+    "%2Fhome%2Frobinopletal%2F": {
+      "dotfiles%2Fdotfiles%2F": {
+        "config%2Fcoc%2Fextensions%2Fnode_modules%2Fcoc-git": [
+          "q",
+          "vim"
+        ]
+      }
+    }
   }
 }
