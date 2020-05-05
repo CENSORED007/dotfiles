@@ -54,6 +54,8 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+let g:gitgutter_preview_win_floating = 1
+
 " -------------
 
 " set Vim-specific sequences for RGB colors
