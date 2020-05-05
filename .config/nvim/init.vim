@@ -45,6 +45,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'terminalnode/sway-vim-syntax'
     " Git stuff
         Plug 'tpope/vim-fugitive'
+    " More git stuff
+        Plug 'airblade/vim-gitgutter'
     " Commentary plugin
         Plug 'tpope/vim-commentary'
 

@@ -30,6 +30,10 @@
       "dotfiles%2Fdotfiles": [
         "pairs"
       ]
-    }
+    },
+    "%2Fhome%2Frobinopletal%2FDocuments%2FProgramming%2FPersonal%2Fwofi-wifi-menu": [
+      "git",
+      "gitig"
+    ]
   }
 }
