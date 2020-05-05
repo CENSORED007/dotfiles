@@ -23,4 +23,9 @@ printf '===================================\n\n'
 export EDITOR="nvim"
 printf '\n'
 
+printf 'Make needed directories\n'
+printf '===================================\n\n'
+
+mkdir -p -v ~/Pictures/screenshots/
+
 printf 'ALL FINISHED!\n'
