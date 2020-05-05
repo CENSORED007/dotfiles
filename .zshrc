@@ -43,6 +43,7 @@ alias image="kitty +kitten icat"
 alias code="~/Documents/Programming"
 alias h="history -20"
 alias ls='exa'
+alias search='rg --files --hidden --no-messages --no-ignore-vcs | fzf'
 alias mpvplaylist='mpv * "$@" &> /dev/null & disown'
 
 # Sway specifics
