@@ -54,7 +54,7 @@ alias screenshots="ranger ~/Pictures/screenshots/"
 alias dots="cd ~/.dotfiles/dotfiles/"
 
 # Navigating the FS
-alias exthdd="cd /run/media/robinopletal/cea2d37b-4ec8-4161-91e3-785ae362e0ab/"
+alias exthdd="cd /run/media/robinopletal/cea2d37b-4ec8-4161-91e3-785ae362e0ab/personalStuff"
 alias inthdd="cd /run/media/robinopletal/internalHDD1"
 
 # Virt-viewer
