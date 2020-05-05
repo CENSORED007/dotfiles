@@ -9,6 +9,8 @@ fi
 # Wayland + virt-viewer
 xhost + &> /dev/null
 
+export FZF_DEFAULT_COMMAND="find -L"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
