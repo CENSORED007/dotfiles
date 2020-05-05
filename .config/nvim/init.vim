@@ -31,13 +31,13 @@ call plug#begin('~/.vim/plugged')
         Plug 'tpope/vim-surround'
     "repeat with . for vim-surround
         Plug 'tpope/vim-repeat'
-    "NerdTree
-        Plug 'preservim/nerdtree'
     "coc.vim
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "Vim Airline
         Plug 'vim-airline/vim-airline'
-    " Fuzzy find
+    " Fuzzy find 1
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Fuzzy find 2
         Plug 'junegunn/fzf.vim'
     " Gruvbox theme
         Plug 'morhetz/gruvbox'
@@ -71,28 +71,41 @@ call plug#end()
         nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.dotfiles/dotfiles/.config/nvim/init.vim<cr>
     " Make new verical split and switch over to it
         nnoremap <leader>w <C-w>v<C-w>l
-    " Nerd tree mapping (CTRL + N = Toggle NerdTree)
-        map <C-n> :NERDTreeToggle<CR>
     " Navigate vim buffers easier 
         nnoremap <C-J> <C-W><C-J>
         nnoremap <C-K> <C-W><C-K>
         nnoremap <C-L> <C-W><C-L>
         nnoremap <C-H> <C-W><C-H>
+    " GFiles
+        nnoremap <C-n> :GFiles<CR>
 
+" COC STUFF!
 
-" UNUSED KEYBINDINGS
-    " <Leader> + o = insert line below and stay in normal mode
-    "   nnoremap <Leader>o o<Esc>
-    " <Leader> + O = insert line above and stay in normal mode
-    "   nnoremap <Leader>O O<Esc>
+    " Go to definition
+        nmap <silent> gd <Plug>(coc-definition)
+    " Find references
+        nmap <silent> gr <Plug>(coc-references)
 
-" Vim movement between windows
-"    nnoremap <C-h> <C-w>h
-"    nnoremap <C-j> <C-w>j
-"    nnoremap <C-k> <C-w>k
-"    nnoremap <C-l> <C-w>l
+    " Use K to show documentation in preview window.
+        nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+    " Use `[g` and `]g` to navigate diagnostics
+        nmap <silent> [g <Plug>(coc-diagnostic-prev)
+        nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Functions for coc vim
+
 
 " ----------------------
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" VARIOUS
 
 "Syntax highlighting
 
@@ -137,9 +150,6 @@ set wildmenu
 " Show line numbers
 set number
 
-" Share clipboard VIM <-> Mac
-" set clipboard=unnamed
-
 " Leader key show command
 set showcmd
 
@@ -155,7 +165,6 @@ set undoreload=10000        " number of lines to save for undo
 " Settings for the color scheme.
 set background=dark    " Setting dark mode
 colorscheme gruvbox
-" highlight Pmenu ctermbg=7 guibg=DarkMagenta
 
 
 " ##################
@@ -183,8 +192,6 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-nnoremap <C-l> <C-i>
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -210,27 +217,6 @@ if has('patch8.1.1068')
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -267,12 +253,6 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <TAB> for selections ranges.
-" NOTE: Requires 'textDocument/selectionRange' support from the language server.
-" coc-tsserver, coc-python are the examples of servers that support it.
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
@@ -286,21 +266,3 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings using CoCList:
-" Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
