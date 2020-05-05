@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/robinopletal/.mozilla/firefox/nazu71n8.default-release-1585490533999'
