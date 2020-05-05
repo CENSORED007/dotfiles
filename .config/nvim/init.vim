@@ -69,10 +69,10 @@ call plug#end()
 
     " Choose between buffers when hitting leader + b
         nnoremap <leader>b :buffers<CR>:buffer<Space>
-    " Edit .vimrc in vertical split pane pressing <leader>ev
-        nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.dotfiles/dotfiles/.config/nvim/init.vim<cr>
-    " Make new verical split and switch over to it
-        nnoremap <leader>w <C-w>v<C-w>l
+    " Edit .vimrc in split pane pressing <leader>ev
+        nnoremap <leader>ev <C-w><C-s><C-l>:e ~/.dotfiles/dotfiles/.config/nvim/init.vim<cr>
+    " Make new split and switch over to it
+        nnoremap <leader>w <C-w><C-s><C-w>j
     " Navigate vim buffers easier 
         nnoremap <C-J> <C-W><C-J>
         nnoremap <C-K> <C-W><C-K>
