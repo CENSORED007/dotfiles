@@ -52,14 +52,12 @@
     "format": "{ifname}",
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "",
-    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "DISCONNECTED", //An empty format will hide the module.
     "tooltip-format": "{ifname}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "kitty -e nmtui-connect"
-        // change the above to wifi script
     },
     "custom/dnd": {
         "exec": "sh ~/.dotfiles/dotfiles/.config/waybar/scripts/waybar-dnd",
