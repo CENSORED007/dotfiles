@@ -10,7 +10,7 @@
 sway, wl-clipboard, clipman, wofi, mako, waybar, kitty, swaylock-effects, grim, slurp,
 nautilus, playerctl, pactl, swayidle, google-chrome, redshift (with wayland patch)
 geoclue, gnome-weather, telegram-desktop, spotify, spicetify-cli, neovim, blueberry,
-lxappearance, exa, ranger, fzf
+lxappearance, exa, ranger, fzf, kitty
 ```
 
 ### Fonts
