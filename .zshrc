@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 
 #Alias ssh for logs to the following command
-alias gcloud-instance-1="kitty +kitten ssh robinopletal@35.234.100.125"
+alias gcloud-drupal="kitty +kitten ssh robinopletal@35.234.100.125"
 # Source zsh with zshreload
 alias zshreload="source ~/.zshrc"
 alias ytdlbestmp4="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
