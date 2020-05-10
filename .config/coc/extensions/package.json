@@ -11,7 +11,7 @@
     "coc-marketplace": ">=1.7.0",
     "coc-python": ">=1.2.12",
     "coc-sh": ">=0.4.0",
-    "coc-vimlsp": ">=0.6.0",
+    "coc-vimlsp": ">=0.8.0",
     "coc-yaml": ">=1.0.4"
   }
 }
