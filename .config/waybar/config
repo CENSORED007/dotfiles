@@ -57,7 +57,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
+    "max-length": 50
     },
     "custom/dnd": {
         "exec": "sh ~/.dotfiles/dotfiles/.config/waybar/scripts/waybar-dnd",
