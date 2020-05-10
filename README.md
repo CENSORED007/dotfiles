@@ -11,6 +11,9 @@ It is possible to use this configuration on other systems as well by
 searching for the names of the respective packages and installing them
 either manually or from the repositories of the specified distribution.
 
+Hopefully, one day, this guide will also have a wiki/guide focused directly on
+more than one distribution! :)
+
 ## Installation requirements
 
 ### Base applications
@@ -62,9 +65,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 ```
-
-* Export nvim as default editor (after installing zsh)
-`export EDITOR="nvim"`
 
 ## Install the config files
 
