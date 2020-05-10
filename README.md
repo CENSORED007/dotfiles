@@ -2,6 +2,15 @@
 
 ![Alt text](Pictures/cool_screenshots/1588591415.png?raw=true "The Desktop")
 
+## Preface
+
+Everything you are seeing (including names of applications) in this repo
+are available primarily either in the Arch repos or in the AUR repos.
+
+It is possible to use this configuration on other systems as well by
+searching for the names of the respective packages and installing them
+either manually or from the repositories of the specified distribution.
+
 ## Installation requirements
 
 ### Base applications
