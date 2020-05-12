@@ -10,6 +10,8 @@ fi
 xhost + &> /dev/null
 
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_WEBRENDER=1
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
