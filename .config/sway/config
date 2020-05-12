@@ -291,8 +291,8 @@ exec swayidle -w \
         resume ' swaymsg "output * dpms on" ' \
     before-sleep '$swaylock' \
 
-# Google-Chrome launch
-bindsym $mod+b exec google-chrome-stable
+# Firefox launch (requires at least one instance running)
+bindsym $mod+b exec firefox --browser
 
 # Testing Chromium Ozone
 #bindsym $mod+b exec chromium
@@ -330,6 +330,7 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Bitwarden"] floating enable
 for_window [class="Google-chrome"] inhibit_idle fullscreen
 for_window [app_id="mpv"] inhibit_idle fullscreen
+for_window [title="xjadeo"] floating enable
 
 #for_window [app_id="telegramdesktop"] floating enable
 
