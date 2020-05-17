@@ -98,7 +98,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 
 # Launch ranger
-bindsym $mod+f exec kitty -e ranger -r ~/
+bindsym $mod+f exec nautilus -w
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -319,6 +319,9 @@ bar {
 exec /usr/lib/geoclue-2.0/demos/agent
 # Redshift (apparently runs alone right now)
 exec redshift
+
+# Automatically start Surfshark VPN on startup
+exec nmcli con up Surfshark
 
 # Per app settings for floating
 for_window [app_id="org.gnome.Weather"] floating enable
